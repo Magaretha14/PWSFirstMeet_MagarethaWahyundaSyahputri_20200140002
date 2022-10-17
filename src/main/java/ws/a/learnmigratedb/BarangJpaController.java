@@ -30,14 +30,12 @@ public class BarangJpaController implements Serializable {
     }
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ws.a_learnmigratedb_jar_0.0.1-SNAPSHOTPU");
 
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
     public BarangJpaController() {
     }
     
-    
+    public EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
 
     public void create(Barang barang) throws PreexistingEntityException, Exception {
         if (barang.getBarangKeluarCollection() == null) {
